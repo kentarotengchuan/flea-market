@@ -1,0 +1,59 @@
+.error-message {
+    color: red;
+    font-size: 18px;
+    padding: 0 0 12px;
+}
+
+.form__login {
+    width: 60%;
+    padding-top: 18px;
+
+    margin: 0 auto;
+}
+
+.form__ttl {
+    text-align: center;
+    padding: 36px 0 0;
+    font-size: 24px;
+}
+
+.ttl__name,
+.ttl__password{
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.form__name,
+.form__password{
+    margin-bottom: 12px;
+    width: 100%;
+    padding: 6px 0;
+    font-size: 24px;
+    border: solid 1px #000000;
+}
+
+.buttons {
+    margin-top: 36px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.button__post {
+    background-color: #FF5555;
+    color: #FFFFFF;
+    padding: 8px 0;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.button__change {
+    color: #4096D9;
+    margin: 12px 0;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,38 @@
+.error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 0;
+}
+.box__change{
+    width: 50%;
+    margin: 32px auto;
+}
+.ttl__change{
+    font-size: 32px;
+    text-align: center;
+}
+.form__change{
+    margin: 72px 0 0;
+}
+.ttl__input{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 32px 0 6px;
+}
+.input__postnumber,.input__address,.input__building{
+    width:100%;
+    padding:6px;
+    border: solid 1px #000000;
+    border-radius: 3px;
+}
+.button__change{
+    margin: 72px 0 0;
+    text-align: center;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 6px 0;
+    background-color: #FF5555;
+    color: #FFFFFF;
+}

@@ -1,0 +1,70 @@
+.error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 0;
+}
+.form__profile{
+    width:60%;
+    margin: 0 auto;
+}
+.form__ttl{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin:36px 0;
+}
+.box__image{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+.img{
+    width:20%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+::file-selector-button,
+::-webkit-file-upload-button{
+    color: #FF5555;
+    background-color: #FFFFFF;
+    border: solid 1px #FF5555;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+.file-label {
+    color: #FF5555;
+    background-color: #FFFFFF;
+    border: solid 1px #FF5555;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+.ttl__name,.ttl__postnumber,.ttl__address,.ttl__building{
+    margin:36px 0 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.form__name,
+.form__postnumber,
+.form__address,
+.form__building{
+    width:100%;
+    padding:3px 12px;
+    font-size: 18px;
+    border: solid 1px #000000;
+    border-radius: 3px;
+}
+.button__post{
+    width:100%;
+    margin:36px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #FF5555;
+    padding:8px;
+    text-align: center;
+}

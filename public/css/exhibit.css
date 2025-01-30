@@ -1,0 +1,152 @@
+.error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 0;
+}
+.box__exhibit{
+    width:60%;
+    margin:0 auto;
+}
+.ttl__exhibit {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 36px 0;
+}
+.ttl__img{
+    font-size: 16px;
+    font-weight: bold;
+}
+.form__inner-img{
+    height:124px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: dotted 1px #000000;
+    border-radius: 3px;
+}
+::file-selector-button,
+::-webkit-file-upload-button {
+    color: #FF5555;
+    background-color: #FFFFFF;
+    border: solid 1px #FF5555;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin:36px auto;
+}
+.file-label {
+    color: #FF5555;
+    background-color: #FFFFFF;
+    border: solid 1px #FF5555;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+.ttl__detail{
+    font-size: 24px;
+    font-weight: bold;
+    margin:48px 0 0;
+    padding:0 0 8px;
+    border-bottom: solid 1px #000000;
+}
+.ttl__category{
+    font-size: 18px;
+    font-weight: bold;
+    margin:24px 0;
+}
+.flex__category{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.label__category {
+    margin-right: 5px;
+    /* ボタン同士の間隔 */
+}
+.input__category {
+    display: none;
+}
+.content__category{
+    color: #FF5555;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #FF5555;
+    border-radius: 20px;
+    padding: 2px 16px;
+}
+
+.input__category:checked+span {
+    color: #FFFFFF;
+    background: #FF5555;
+    border: 1px solid #FF5555;
+}
+.ttl__condition{
+    margin:36px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.select__condition{
+    margin: 24px 0 0;
+    width:100%;
+    padding:6px 12px;
+    border:solid 1px #000000;
+    border-radius: 3px;
+}
+.select__condition option {
+    color: #FFFFFF;
+    background-color: #636769;
+}
+.ttl__name-and-description{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 48px 0 0;
+    padding: 0 0 8px;
+    border-bottom: solid 1px #000000;
+}
+.ttl__name,.ttl__description,.ttl__price{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 24px 0;
+}
+.input__name,.input__description{
+    font-size: 18px;
+    padding:6px;
+    width:100%;
+    border: solid 1px #000000;
+    border-radius: 3px;
+}
+.input__price{
+    font-size: 18px;
+    padding: 6px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+.box__price{
+    display: flex;
+    align-items: center;
+    border:solid 1px #000000;
+    border-radius: 3px;
+}
+.currency{
+    margin: 0 0 0 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.button__submit{
+    margin: 72px 0 36px;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 3px;
+    padding: 6px 0;
+    background-color: #FF5555;
+    color: #FFFFFF;
+}
+
+
