@@ -27,7 +27,7 @@
         @foreach($products as $product)
         <a href="{{route('detail',['id'=>$product->id])}}" class="link__shop">
             <div class="box__product">
-                <div class="box__img">
+                <div class="box__img" id={{$product->id}}>
                     @if($product->sold == 'yes')
                     <p class="sold">sold</p>
                     @else

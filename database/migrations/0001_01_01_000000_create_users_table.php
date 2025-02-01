@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('building')->nullable();
             $table->string('img_path')->nullable();
+            $table->string('first_login');
             $table->rememberToken();
             $table->timestamps();
         });

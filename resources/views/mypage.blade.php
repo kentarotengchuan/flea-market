@@ -42,11 +42,11 @@
             <a href="{{route('detail',['id'=>$product->id])}}" class="link__shop">
             <div class="box__product">
                 <div class="box__img">
-                    @if($product->sold == 'yes')
-                    <p class="sold">sold</p>
-                    @else
+                    @if($product->sold == 'no' || $session == 'buy')                    
                     <img class="img__product" src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="">
-                    @endif    
+                    @else
+                    <p class="sold">sold</p>
+                    @endif
                 </div>
                 <p class="name__product">{{$product->name}}</p>    
             </div>

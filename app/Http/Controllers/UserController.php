@@ -34,8 +34,7 @@ class UserController extends Controller
         ->update([
             'name' => $request->name,
             'postnumber' => $request->postnumber,
-            'address' => $request->address,
-            
+            'address' => $request->address,    
         ]);
         if(isSet($request->building)){
             User::findOrFail($id)

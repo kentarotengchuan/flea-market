@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             'postnumber' => '000-0000',
             'address' => 'テスト県テスト市1丁目1-1',
             'building' => 'テストビル111',
+            'first_login' => 'no',
         ]);
     }
 }

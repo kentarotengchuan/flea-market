@@ -33,10 +33,17 @@ class ProductController extends Controller
         }else{
             $search = "";
         } 
-
-        $products = Product::query()->where(function ($query) use ($request,$search) {
-            $query->where('name', 'LIKE', '%' . $search . '%');
-        })->get();
+        if(Auth::check()){
+            $id = Auth::user()->id;
+            $products = Product::query()->where(function ($query) use ($request,$search,$id) {
+                $query->where('user_id','!=',$id)
+                ->where('name', 'LIKE', '%' . $search . '%');
+            })->get();
+        }else{
+            $products = Product::query()->where(function ($query) use ($request,$search) {
+                $query->where('name', 'LIKE', '%' . $search . '%');
+            })->get();
+        }
 
         $request->session()->put('products',$products);
         $request->session()->put('search',$search);
@@ -59,7 +66,10 @@ class ProductController extends Controller
             //dd($search);
             $products = Product::whereHas('likeds',function($query) use($id){
                 $query->where('user_id',$id);                   
-            })->where('name', 'LIKE', '%' . $search . '%')->get();
+            })
+            ->where('user_id','!=',$id)
+            ->where('name', 'LIKE', '%' . $search . '%')
+            ->get();
             //dd($products);
 
             $request->session()->put('products',$products);
