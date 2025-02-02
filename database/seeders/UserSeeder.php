@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
             'address' => 'テスト県テスト市1丁目1-1',
             'building' => 'テストビル111',
             'first_login' => 'no',
+            'img_path' => 'emp.png',
         ]);
     }
 }

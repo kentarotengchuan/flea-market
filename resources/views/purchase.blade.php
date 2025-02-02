@@ -124,7 +124,7 @@
 </script>
 <script>
     $(document).ready(function() {
-        $('#method').on('input', function() {
+        $('#method').on('change', function() {
             const method = $(this).val().trim(); 
             $('#output-method').text(method);
             });

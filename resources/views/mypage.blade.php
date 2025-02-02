@@ -40,10 +40,10 @@
         <div class="box__products">
         @foreach ($products as $product)
             <a href="{{route('detail',['id'=>$product->id])}}" class="link__shop">
-            <div class="box__product">
+            <div class="box__product" id="box-{{$product->id}}">
                 <div class="box__img">
                     @if($product->sold == 'no' || $session == 'buy')                    
-                    <img class="img__product" src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="">
+                    <img class="img__product" id="product-{{$product->id}}" src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="">
                     @else
                     <p class="sold">sold</p>
                     @endif

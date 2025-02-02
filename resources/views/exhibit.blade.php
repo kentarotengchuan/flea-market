@@ -28,7 +28,7 @@
                         <div class="flex__category">
                         @foreach ($categories as $category)
                             <label class="label__category">
-                                <input type="checkbox" id="{{$category->id}}" name="options[]" value="{{$category->id}}" class="input__category">
+                                <input type="checkbox" id="check-{{$category->id}}" name="options[]" value="{{$category->id}}" class="input__category">
                                 <span class="content__category">{{$category->content}}</span>
                             </label>
                         @endforeach
