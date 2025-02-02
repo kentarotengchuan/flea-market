@@ -11,6 +11,13 @@ class RegisterTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->artisan('db:seed');
+    }
+
     public function test_validation_for_name_null()
     {
         $this->browse(function (Browser $browser) {
@@ -19,7 +26,6 @@ class RegisterTest extends DuskTestCase
                 ->type('password', 'hogehoge')
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->waitForText('名前を入力してください', 5)
                 ->assertSee('名前を入力してください');
         });
     }
@@ -32,7 +38,6 @@ class RegisterTest extends DuskTestCase
                 ->type('password', 'hogehoge')
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->waitForText('メールアドレスを入力してください', 5)
                 ->assertSee('メールアドレスを入力してください');
         });
     }
@@ -46,7 +51,6 @@ class RegisterTest extends DuskTestCase
                 ->type('password', '') //パスワード未入力
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->waitForText('パスワードを入力してください', 5)
                 ->assertSee('パスワードを入力してください');
         });
     }
@@ -60,7 +64,6 @@ class RegisterTest extends DuskTestCase
                 ->type('password', 'hoge') //4文字のパスワード
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->waitForText('パスワードは最低8文字以上で入力してください', 5)
                 ->assertSee('パスワードは最低8文字以上で入力してください');
         });
     }
@@ -75,7 +78,6 @@ class RegisterTest extends DuskTestCase
                 ->type('password_confirmation', 'hogehogehoge')
                 //確認用パスワードが異なる
                 ->press('登録')
-                ->waitForText('パスワードが一致しません', 5)
                 ->assertSee('パスワードが一致しません');
         });
     }

@@ -54,7 +54,7 @@ class GetProfileTest extends DuskTestCase
                 ->assertPathIs('/mypage');
 
             foreach ($boughtProducts as $product) {
-                $browser->assertPresent(".box__products #box-$product->id")->dump();
+                $browser->assertPresent(".box__products #box-$product->id");
             } //購入した商品の出力を検証
 
         });

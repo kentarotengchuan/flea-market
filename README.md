@@ -5,7 +5,7 @@
 ### Dockerビルド
 1.「git clone git@github.com:kentarotengchuan/flea-market.git」
 
-2.アプリディレクトリに移動し「sudo cp .env.example .env」。
+2.アプリディレクトリに移動し「sudo cp .env.example .env」
 
 ### Laravel環境構築
 3.「docker run --rm \
@@ -34,13 +34,15 @@
 
     ※ダミー商品全ての出品者
 
-(8025番ポートにおいてMailpitでの認証を行う)
+9.「./vendor/bin/sail artisan storage:link」でシンボリックリンクを作成する。
 
 ##  URL
 
-・　アプリ画面：http://localhost
-・　Mailpit：http://localhost:8025
-・　phpMyAdmin：http://localhost:8080
+・アプリ画面：http://localhost
+
+・Mailpit：http://localhost:8025
+
+・phpMyAdmin：http://localhost:8080
 
 ## 使用技術（実行環境）
 

@@ -24,7 +24,6 @@ class LoginTest extends DuskTestCase
             $browser->visit('/login')
                 ->type('password', 'hogehoge') //パスワードのみ入力
                 ->press('ログインする')
-                ->waitForText('メールアドレスを入力してください', 5)
                 ->assertSee('メールアドレスを入力してください');
         });
     }
@@ -35,7 +34,6 @@ class LoginTest extends DuskTestCase
             $browser->visit('/login')
                 ->type('email', 'test@test.com') //メールアドレスのみ入力
                 ->press('ログインする')
-                ->waitForText('パスワードを入力してください', 5)
                 ->assertSee('パスワードを入力してください');
         });
     }
@@ -47,7 +45,6 @@ class LoginTest extends DuskTestCase
                 ->type('email', 'notexist@test.com') //存在しないユーザー
                 ->type('password', 'hogehoge')
                 ->press('ログインする')
-                ->waitForText('これらの認証情報は記録と一致しません。', 5)
                 ->assertSee('これらの認証情報は記録と一致しません。');
         });
     }

@@ -21,7 +21,8 @@ use App\Models\Sort;
 class ProductController extends Controller
 {
     public function index(Request $request){
-        $products = $request->session()->get('products',[]);
+        $all = Product::all();
+        $products = $request->session()->get('products',$all);
         $search = $request->session()->get('search',"");
         $page = $request->session()->get('page','all');
     
