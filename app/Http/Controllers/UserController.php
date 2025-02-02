@@ -43,6 +43,6 @@ class UserController extends Controller
             ]);        
         }
 
-        return redirect(route('index'));
+        return redirect(route('all'));
     }
 }
