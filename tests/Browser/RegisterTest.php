@@ -26,7 +26,7 @@ class RegisterTest extends DuskTestCase
                 ->type('password', 'hogehoge')
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->assertSee('名前を入力してください');
+                ->assertSee('お名前を入力してください');
         });
     }
 
@@ -64,7 +64,7 @@ class RegisterTest extends DuskTestCase
                 ->type('password', 'hoge') //4文字のパスワード
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->assertSee('パスワードは最低8文字以上で入力してください');
+                ->assertSee('パスワードは8文字以上で入力してください');
         });
     }
 
@@ -78,7 +78,7 @@ class RegisterTest extends DuskTestCase
                 ->type('password_confirmation', 'hogehogehoge')
                 //確認用パスワードが異なる
                 ->press('登録')
-                ->assertSee('パスワードが一致しません');
+                ->assertSee('パスワードと一致しません');
         });
     }
 

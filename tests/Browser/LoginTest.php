@@ -45,7 +45,7 @@ class LoginTest extends DuskTestCase
                 ->type('email', 'notexist@test.com') //存在しないユーザー
                 ->type('password', 'hogehoge')
                 ->press('ログインする')
-                ->assertSee('これらの認証情報は記録と一致しません。');
+                ->assertSee('ログイン情報が登録されていません。');
         });
     }
 
