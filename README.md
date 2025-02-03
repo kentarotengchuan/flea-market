@@ -15,7 +15,7 @@
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs」を実行してcomposerをインストール。
 
-4.一つ前のディレクトリに戻って「sudo chown -R {Linuxのユーザー名} flea-market」で所有者の変更。
+4.一つ前のディレクトリに戻って「sudo chown -R {コマンドラインのユーザー名} flea-market」で所有者の変更。
 
 5.再び、flea-marketのディレクトリに戻って「./vendor/bin/sail up -d」を実行し、アプリを立ち上げる。
 
