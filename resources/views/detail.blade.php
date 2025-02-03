@@ -19,7 +19,7 @@
         <div class="flex">
             <div class="left">
                 <div class="img__inner">
-                    <img class="img" src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="">
+                    <img class="img" src="{{ asset('storage/product_images/'.$product->imgPath) }}" alt="">
                 </div>
             </div>
             <div class="right">
@@ -87,8 +87,8 @@
                             <div class="box__admin">
                                 <div class="img__admin">
                                     <img class="img__user"
-                                    @if(isset($comment->user->img_path))
-                                    src="{{ asset('storage/user_images/'.$comment->user->img_path) }}"
+                                    @if(isset($comment->user->imgPath))
+                                    src="{{ asset('storage/user_images/'.$comment->user->imgPath) }}"
                                     @else
                                     src="{{ asset('storage/user_images/emp.png') }}"
                                     @endif>

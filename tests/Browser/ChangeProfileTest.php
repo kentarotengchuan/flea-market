@@ -32,7 +32,7 @@ class ChangeProfileTest extends DuskTestCase
                 ->assertPathIs('/')
                 ->visit('/mypage/profile')
                 ->assertPathIs('/mypage/profile')
-                ->assertAttribute('.box__image img', 'src',asset("storage/user_images/$user->img_path"))
+                ->assertAttribute('.box__image img', 'src',asset("storage/user_images/$user->imgPath"))
                 ->assertValue('.form__name',"$user->name")
                 ->assertValue('.form__postnumber',"$user->postnumber")
                 ->assertValue('.form__address',"$user->address")
@@ -41,7 +41,7 @@ class ChangeProfileTest extends DuskTestCase
                 ->visit('/');
                 
 
-            $user->img_path = 'test.png';
+            $user->imgPath = 'test.png';
             $user->save();
 
             $browser->visit('/mypage/profile')

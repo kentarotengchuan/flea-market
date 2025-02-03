@@ -3,7 +3,6 @@
     font-size: 18px;
     padding: 0 0 12px;
 }
-
 .form__login {
     width: 60%;
     padding-top: 18px;
@@ -14,36 +13,30 @@
     width: 60%;
     margin: 0 auto;
 }
-
 .verify-message {
     text-align: center;
     margin: 24px 0;
     font-size: 16px;
     font-weight: bold;
 }
-
 .buttons__verify {
     display: flex;
     justify-content: center;
     gap: 24px;
 }
-
 .button__verify {
     color: blue;
 }
-
 .form__ttl {
     text-align: center;
     padding: 36px 0 0;
     font-size: 24px;
 }
-
 .ttl__name,
 .ttl__password{
     margin-top: 12px;
     font-weight: bold;
 }
-
 .form__name,
 .form__password{
     margin-bottom: 12px;
@@ -52,7 +45,6 @@
     font-size: 24px;
     border: solid 1px #000000;
 }
-
 .buttons {
     margin-top: 36px;
     text-align: center;
@@ -60,7 +52,6 @@
     flex-wrap: wrap;
 
 }
-
 .button__post {
     background-color: #FF5555;
     color: #FFFFFF;
@@ -69,7 +60,6 @@
     text-align: center;
     width: 100%;
 }
-
 .button__change {
     color: #4096D9;
     margin: 12px 0;

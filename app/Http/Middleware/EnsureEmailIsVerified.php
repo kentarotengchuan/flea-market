@@ -10,9 +10,9 @@ class EnsureEmailIsVerified
 {
     public function handle(Request $request, Closure $next)
     {
-        // ✅ ユーザーがログイン済みかつメール認証が完了していない場合
         if (Auth::check() && !Auth::user()->hasVerifiedEmail()) {
-            Auth::logout(); // 強制ログアウト
+            Auth::logout();
+            
             return redirect(route('login'))->with('not_authorized', 'メール認証が済んでいません。認証メールをご確認ください。');
         }
 

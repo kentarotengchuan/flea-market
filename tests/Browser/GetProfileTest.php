@@ -42,7 +42,7 @@ class GetProfileTest extends DuskTestCase
                 ->assertPathIs('/')
                 ->visit('/mypage')
                 ->assertPathIs('/mypage')
-                ->assertAttribute('.img__inner img', 'src',asset("storage/user_images/$user->img_path"))
+                ->assertAttribute('.img__inner img', 'src',asset("storage/user_images/$user->imgPath"))
                 ->assertSeeIn('.name__profile',"$user->name");
                 // ログインユーザのプロフィール画像と名前の出力を検証
             

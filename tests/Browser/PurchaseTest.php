@@ -39,7 +39,7 @@ class PurchaseTest extends DuskTestCase
                 'user_id' => 1,
                 'condition_id' => 1,
                 'name' => 'test_product',
-                'img_path' => 'watch.jpg',
+                'imgPath' => 'watch.jpg',
                 'price' => 5000,
                 'description' => 'test_description',
                 'sold' => 'no',
@@ -88,7 +88,7 @@ class PurchaseTest extends DuskTestCase
                 'user_id' => 2,
                 'condition_id' => 1,
                 'name' => 'test_product',
-                'img_path' => 'watch.jpg',
+                'imgPath' => 'watch.jpg',
                 'price' => 5000,
                 'description' => 'test_description',
                 'sold' => 'no',
@@ -141,7 +141,7 @@ class PurchaseTest extends DuskTestCase
                 'user_id' => 2,
                 'condition_id' => 1,
                 'name' => 'test_product',
-                'img_path' => 'watch.jpg',
+                'imgPath' => 'watch.jpg',
                 'price' => 5000,
                 'description' => 'test_description',
                 'sold' => 'no',
@@ -169,7 +169,7 @@ class PurchaseTest extends DuskTestCase
             ]); //商品が購入されたことを確認
 
         $browser->visit('/mypage/buy')
-            ->assertAttribute("#product-$product->id", 'src', asset("storage/product_images/$product->img_path"));
+            ->assertAttribute("#product-$product->id", 'src', asset("storage/product_images/$product->imgPath"));
     });
     }
 }

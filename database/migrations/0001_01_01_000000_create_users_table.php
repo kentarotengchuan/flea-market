@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('postnumber')->nullable();
             $table->string('address')->nullable();
             $table->string('building')->nullable();
-            $table->string('img_path')->nullable();
+            $table->string('imgPath')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -65,7 +65,9 @@
 ## ER図
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/ba709ad1-4e0c-41df-8827-70590de3db06">
+<img src="https://github.com/user-attachments/assets/2d051c04-e1f5-4387-bdb0-b9fe4623437c">
 </p>
 
-## ローカル環境の構築手順
+## テスト
+
+・　マイグレーション後にコマンドライン上で「./vendor/bin/sail dusk」

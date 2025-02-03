@@ -50,7 +50,7 @@ class ChangeAddressTest extends DuskTestCase
             'user_id' => 1,
             'condition_id' => 1,
             'name' => 'test_product',
-            'img_path' => 'watch.jpg',
+            'imgPath' => 'watch.jpg',
             'price' => 5000,
             'description' => 'test_description',
             'sold' => 'no',

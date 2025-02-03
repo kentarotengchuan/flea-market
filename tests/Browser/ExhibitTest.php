@@ -51,7 +51,7 @@ class ExhibitTest extends DuskTestCase
                 ->assertSeeIn('.content__description', $createdProduct->description)
                 ->assertSeeIn('.box__category', $firstCategory)
                 ->assertSeeIn('.content__condition', $createdProduct->condition->content)
-                ->assertAttribute('.img__inner img', 'src',asset("storage/product_images/$createdProduct->img_path"))
+                ->assertAttribute('.img__inner img', 'src',asset("storage/product_images/$createdProduct->imgPath"))
                 ->assertSeeIn('.name', "$createdProduct->name");
         });
     }

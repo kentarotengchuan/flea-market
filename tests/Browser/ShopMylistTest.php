@@ -33,7 +33,7 @@ class ShopMylistTest extends DuskTestCase
             'user_id' => 2,
             'condition_id' => 1,
             'name' => 'test_product',
-            'img_path' => 'watch.jpg',
+            'imgPath' => 'watch.jpg',
             'price' => 8000,
             'description' => 'test_description',
             'sold' => 'no',
@@ -72,7 +72,7 @@ class ShopMylistTest extends DuskTestCase
             'user_id' => 2,
             'condition_id' => 1,
             'name' => 'test_product',
-            'img_path' => 'watch.jpg',
+            'imgPath' => 'watch.jpg',
             'price' => 8000,
             'description' => 'test_description',
             'sold' => 'yes', //売れた商品

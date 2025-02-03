@@ -12,7 +12,7 @@ class Product extends Model
         'user_id',
         'condition_id',
         'name',
-        'img_path',
+        'imgPath',
         'brand',
         'price',
         'description',

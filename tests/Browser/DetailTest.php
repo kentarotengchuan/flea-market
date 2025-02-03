@@ -45,7 +45,7 @@ class DetailTest extends DuskTestCase
                 $firstCategory = $product->getCategories()->first()->content;
 
                 $browser->visit("/item/{$product->id}")
-                    ->assertAttribute('.img__inner img', 'src', asset("storage/product_images/$product->img_path"))
+                    ->assertAttribute('.img__inner img', 'src', asset("storage/product_images/$product->imgPath"))
                     ->assertSeeIn('.name', $product->name);
                 if ($product->brand) {
                     $browser->assertSeeIn('.brand', $product->brand);
@@ -79,11 +79,11 @@ class DetailTest extends DuskTestCase
                 'user_id' => 1,
                 'condition_id' => 1,
                 'name' => 'test_product',
-                'img_path' => 'watch.jpg',
+                'imgPath' => 'watch.jpg',
                 'price' => '666',
                 'description' => 'test_description',
                 'sold' => 'no',
-            ]); // ID は 11
+            ]); // IDは11
 
             $allCategories = Category::all();
 

@@ -14,7 +14,7 @@
                 <div class="box__product">
                     <div class="box__left">
                         <div class="img__inner">
-                            <img src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="" class="img__product">
+                            <img src="{{ asset('storage/product_images/'.$product->imgPath) }}" alt="" class="img__product">
                         </div>
                     </div>
                     <div class="box__right">

@@ -9,8 +9,8 @@
             <div class="profile__flex">
                 <div class="img__inner">
                     <img class="img__user" 
-                    @if(isset($user->img_path))
-                    src="{{ asset('storage/user_images/'.$user->img_path) }}"
+                    @if(isset($user->imgPath))
+                    src="{{ asset('storage/user_images/'.$user->imgPath) }}"
                     @else
                     src="{{ asset('storage/user_images/emp.png') }}"
                     @endif >
@@ -43,7 +43,7 @@
             <div class="box__product" id="box-{{$product->id}}">
                 <div class="box__img">
                     @if($product->sold == 'no' || $session == 'buy')                    
-                    <img class="img__product" id="product-{{$product->id}}" src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="">
+                    <img class="img__product" id="product-{{$product->id}}" src="{{ asset('storage/product_images/'.$product->imgPath) }}" alt="">
                     @else
                     <p class="sold">sold</p>
                     @endif

@@ -45,23 +45,23 @@ class RegisterRequest extends FormRequest
         $errors = $validator->errors();
         $customErrors = [];
 
-        foreach ($errors->messages() as $field => $messages) {
-            if ($field === 'password') {
-                foreach ($messages as $message) {
-                    if ($message === __('パスワードと一致しません')) {
+        foreach ($errors->messages() as $field => $messages){
+            if($field === 'password'){
+                foreach ($messages as $message){
+                    if ($message === __('パスワードと一致しません')){
                         session()->flash('password_confirmation_error', $message);
-                    } else {
-                        if (!session()->has('password_error')) {
+                    }else{
+                        if(!session()->has('password_error')){
                             session()->flash('password_error', $message);
                         }
                     }
                 }
-            } else {
+            }else{
                 $customErrors[$field] = $messages;
             }
         }
 
-        if (!empty($customErrors)) {
+        if(!empty($customErrors)){
             session()->flash('validation_errors', $customErrors);
         }
 

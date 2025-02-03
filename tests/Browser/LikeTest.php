@@ -31,10 +31,10 @@ class LikeTest extends DuskTestCase
 
             $browser->visit('/item/1')
                 ->waitFor('.count__favorite')
-                ->assertSeeIn('.count__favorite', '0') // いいね数の初期値は0
-                ->click('#like') // いいねボタンをクリック
+                ->assertSeeIn('.count__favorite', '0') //いいね数の初期値は0
+                ->click('#like') //いいねボタンをクリック
                 ->pause(1000)
-                ->assertSeeIn('.count__favorite', '1'); // いいね数が増えているかの検証
+                ->assertSeeIn('.count__favorite', '1'); //いいね数が増えているかの検証
         });
     }
 
@@ -49,10 +49,10 @@ class LikeTest extends DuskTestCase
 
             $browser->visit('/item/1')
                 ->waitFor('#like')
-                ->assertMissing('.liked') // 初期状態で色を付与する'liked'クラスがないことを確認
-                ->click('#like') // いいねボタンをクリック
+                ->assertMissing('.liked') //初期状態で色を付与する'liked'クラスがないことを確認
+                ->click('#like') //いいねボタンをクリック
                 ->pause(1000)
-                ->assertPresent('.liked'); // いいねボタンに'liked'クラスが付くことを確認
+                ->assertPresent('.liked'); //いいねボタンに'liked'クラスが付くことを確認
         });
     }
 
@@ -67,13 +67,13 @@ class LikeTest extends DuskTestCase
 
             $browser->visit('/item/1')
                 ->waitFor('.count__favorite')
-                ->assertSeeIn('.count__favorite', '0') // いいね数の初期値は0
-                ->click('#like') // いいねボタンをクリック
+                ->assertSeeIn('.count__favorite', '0') //いいね数の初期値は0
+                ->click('#like') //いいねボタンをクリック
                 ->pause(1000)
-                ->assertSeeIn('.count__favorite', '1') // いいね数が増えているかの検証
-                ->click('#like') // もう一度いいねボタンをクリック（取り消し）
+                ->assertSeeIn('.count__favorite', '1') //いいね数が増えているかの検証
+                ->click('#like') //もう一度いいねボタンをクリック（取り消し）
                 ->pause(1000)
-                ->assertSeeIn('.count__favorite', '0'); // いいね数が減っているかの検証
+                ->assertSeeIn('.count__favorite', '0'); //いいね数が減っているかの検証
         });
     }
 }

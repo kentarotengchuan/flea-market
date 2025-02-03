@@ -12,8 +12,8 @@
                 <input type="hidden" name="id" value={{$user->id}}>
                 <div class="box__image">
                     <img class="img" 
-                    @if(isset($user->img_path))
-                    src="{{ asset('storage/user_images/'.$user->img_path) }}"
+                    @if(isset($user->imgPath))
+                    src="{{ asset('storage/user_images/'.$user->imgPath) }}"
                     @else
                     src="{{ asset('storage/user_images/emp.png') }}"
                     @endif >

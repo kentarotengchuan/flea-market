@@ -31,7 +31,7 @@
                     @if($product->sold == 'yes')
                     <p class="sold">sold</p>
                     @else
-                    <img class="img" src="{{ asset('storage/product_images/'.$product->img_path) }}" alt="">
+                    <img class="img" src="{{ asset('storage/product_images/'.$product->imgPath) }}" alt="">
                     @endif
                 </div>
                 <p class="name__product">{{$product->name}}</p>
