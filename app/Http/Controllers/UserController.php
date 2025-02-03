@@ -62,10 +62,6 @@ class UserController extends Controller
         }
         return redirect(route('detail',['id'=>$id]));
     }
-    public function detail(int $id){
-        $product = Product::findOrFail($id);
-        return view('detail',compact('product'));
-    }
 
     public function postComment(CommentRequest $request){
         Comment::create([

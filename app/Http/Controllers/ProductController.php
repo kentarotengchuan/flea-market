@@ -101,6 +101,11 @@ class ProductController extends Controller
         }
     }
 
+    public function detail(int $id){
+        $product = Product::findOrFail($id);
+        return view('detail',compact('product'));
+    }
+
     public function exhibit(){
         $categories = Category::all();
         $conditions = Condition::all();
