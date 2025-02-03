@@ -23,7 +23,7 @@ Route::middleware([EnsureEmailIsVerified::class])->group(function (){
     Route::get('/purchase/{id}',[ProductController::class,'goPurchase'])->middleware(['auth','verified'])->name('goPurchase');
 
     Route::get('/purchase/address/{id}',[ProductController::class,'goChange'])->middleware(['auth','verified'])->name('goChange');
-    Route::post('/purchase/change-address',[ProductController::class,'change'])->middleware(['auth','verified'])->name('change');
+    Route::post('/purchase/change-address',[UserController::class,'change'])->middleware(['auth','verified'])->name('change');
 
     Route::post('/purchase/product/sold',[ProductController::class,'purchase'])->middleware(['auth','verified'])->name('payment.session');
     Route::get('/purchase/product/success/{id}',[ProductController::class,'success'])->middleware(['auth','verified'])->name('success');
