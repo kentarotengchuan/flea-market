@@ -27,7 +27,7 @@ class ExhibitionRequest extends FormRequest
             'image' => ['required','mimes:jpeg,png'],
             'options' => 'required',
             'condition' => 'required',
-            'price' => ['required','int'],
+            'price' => ['required','int','min:1'],
         ];
     }
     public function messages(){
@@ -41,6 +41,7 @@ class ExhibitionRequest extends FormRequest
             'condition.required' => '状態を選択してください',
             'price.required' => '価格を入力してください',
             'price.int' => '価格は数値形式で入力してください', 
+            'price.min' => '価格は0円以上で入力してください',
         ];
     }
 }

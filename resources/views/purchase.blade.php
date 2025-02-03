@@ -49,6 +49,11 @@
                         <p class="content__address">
                         {{$user->address.$user->building}}
                         </p>
+                        @error('password')
+                        <p class="error-message">
+                            {{$errors->first('address')}}
+                        </p>
+                        @enderror
                     </div>
                     
                 </div>

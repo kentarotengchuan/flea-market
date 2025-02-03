@@ -79,7 +79,7 @@ class ChangeAddressTest extends DuskTestCase
                 ->type('#cardCvc','666')
                 ->type('#billingName','testuser')
                 ->click('.SubmitButton')
-                ->pause(3000)
+                ->pause(5000)
                 ->assertPathIs("/item/$product->id");
 
             $this->assertDatabaseHas('products', [

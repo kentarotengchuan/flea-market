@@ -32,4 +32,9 @@ class PurchaseRequest extends FormRequest
             'address.required' => '住所を指定してください',
         ];
     }
+
+    public function __get($key)
+    {
+        return $this->input($key);
+    }
 }

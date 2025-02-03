@@ -25,13 +25,16 @@
                 @enderror
                 <p class="ttl__password">パスワード</p>
                 <input class="form__password" type="password" name="password" id="password">
-                @error('password')
-                <p class="error-message">
-                    {{$errors->first('password')}}
-                </p>
-                @enderror
+                @if(session('password_error'))
+                    <p class="error-message">{{ session('password_error') }}</p>
+                @endif
                 <p class="ttl__password-confirm">確認用パスワード</p>
                 <input class="form__password-confirm" type="password" name="password_confirmation" id="password-confirm">
+                @if(session('password_confirmation_error'))
+                <p class="error-message">
+                    {{ session('password_confirmation_error') }}
+                </p>
+                @endif
                 <div class="buttons">
                     <button class="button__post" type="submit">登録する</button>
                     <a href="{{route('login')}}" class="button__change">ログインはこちら</a>

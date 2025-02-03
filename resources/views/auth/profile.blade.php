@@ -9,6 +9,7 @@
             <h2 class="form__ttl">プロフィール設定</h2>       
             <form action="{{route('storeProfile')}}" method="post" enctype="multipart/form-data">
             @csrf
+                <input type="hidden" name="id" value={{$user->id}}>
                 <div class="box__image">
                     <img class="img" 
                     @if(isset($user->img_path))

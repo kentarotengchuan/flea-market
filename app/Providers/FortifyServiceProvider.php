@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
-use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Responses\RegisterResponse;
 use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController as FortifyRegisteredUserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController as FortifyAuthenticatedSessionController;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,16 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(RegisterResponseContract::class, RegisterResponse::class);
+
+        $this->app->singleton(
+        FortifyRegisteredUserController::class,
+        RegisteredUserController::class
+        );
+
+        $this->app->singleton(
+        FortifyAuthenticatedSessionController::class,
+        AuthenticatedSessionController::class
+        );
     }
 
     /**
@@ -41,39 +54,15 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
-
-        Fortify::redirects(
-            '/all'
-        );
+        
+        Fortify::verifyEmailView(function () {
+            return view('auth.done');
+        });
 
         RateLimiter::for('login', function (Request $request)   {
             $email = (string) $request->email;
 
             return Limit::perMinute(10)->by($email . $request->ip());
-        });
-
-        Fortify::verifyEmailView(function () {
-            return view('auth.done');
-        });
-
-        /*Fortify::logoutUsing(function (Request $request) {
-            Auth::logout();
-            $request->session()->flush();
-            $request->session()->invalidate();
-            $request->session()->regenerateToken();
-        });
-        /*Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
-        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
-
-        RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
-
-            return Limit::perMinute(5)->by($throttleKey);
-        });
-
-        RateLimiter::for('two-factor', function (Request $request) {
-            return Limit::perMinute(5)->by($request->session()->get('login.id'));
-        });*/
+        });   
     }
 }

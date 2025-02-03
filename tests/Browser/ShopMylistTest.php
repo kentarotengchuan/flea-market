@@ -27,7 +27,6 @@ class ShopMylistTest extends DuskTestCase
             'name' => 'publisher',
             'email' => 'publisher@test.com',
             'password' => 'hogehoge',
-            'first_login' => 'yes',
         ]);
 
         $likedProduct = Product::create([
@@ -67,7 +66,6 @@ class ShopMylistTest extends DuskTestCase
             'name' => 'publisher',
             'email' => 'publisher@test.com',
             'password' => 'hogehoge',
-            'first_login' => 'yes',
         ]);
 
         $likedAndSoldProduct = Product::create([

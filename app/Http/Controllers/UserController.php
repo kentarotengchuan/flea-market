@@ -12,14 +12,17 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function done(){
+        return view('auth.done');
+    }
+
     public function profile(){
-        $user = Auth::user();
+        $user = User::latest()->first();
         return view('auth.profile',compact('user'));
     }
 
     public function storeProfile(ProfileRequest $request){
-        $user = Auth::user();
-        $id = $user->id;
+        $id = $request->id;
         if($request->file('image') !== null){
         $image = $request->file('image');
         $fileName = time() . '_' . uniqid() . ".png";

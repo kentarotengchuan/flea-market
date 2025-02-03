@@ -38,30 +38,37 @@ class SearchTest extends DuskTestCase
 
     public function test_keep_value_on_mypage()
     {
+        $testSearcher = User::findOrFail(1);
+
         $HDD = Product::findOrFail(2); //「HDD」という商品
         $butHDD = Product::where('id', '!=', 2)->get(); //HDD以外の商品を取得
 
-        $testSearcher = User::create([
-            'name' => 'seacher',
-            'email' => 'searcher@test.com',
+        $testPublisher = User::create([
+            'name' => 'publisher',
+            'email' => 'publisher@test.com',
+            'email_verified_at' => now(),
             'password' => 'hogehoge',
-            'first_login' => 'no',
         ]);
 
         $likedProducts = Product::all();
 
         foreach ($likedProducts as $product) {
+            Product::findOrFail($product->id)
+            ->update([
+                'user_id' => "$testPublisher->id",
+            ]);
+            // 出品者の一律変更
             Like::create([
                 'product_id' => $product->id,
                 'user_id' => $testSearcher->id,
-            ]);
+            ]);   
         }
 
         $this->browse(function (Browser $browser) use ($testSearcher,$HDD,$butHDD) {
             $browser->visit('/login')
                 ->type('email', $testSearcher->email)
                 ->type('password', 'hogehoge')
-                ->press('ログインする')
+                ->press('ログインする')     
                 ->waitForLocation('/')
                 ->assertPathIs('/')
                 ->visit('/all?search=H') //「H」で検索

@@ -4,17 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\FirstLoginRedirect;
+use App\Http\Middleware\EnsureEmailIsVerified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-Route::middleware([FirstLoginRedirect::class])->group(function () {
+Route::get('/done',[UserController::class,'done'])->name('done');
+Route::get('/mypage/profile',[UserController::class,'profile'])->name('profile');
+Route::post('/mypage/profile',[UserController::class,'storeProfile'])->name('storeProfile');
+
+Route::middleware([EnsureEmailIsVerified::class])->group(function (){   
     Route::get('/', [ProductController::class,'index'])->name('index');
     Route::get('/all',[ProductController::class,'all'])->name('all');
     Route::get('/mylist',[ProductController::class,'mylist'])->name('mylist');
-    Route::get('/item/{id}',[ProductController::class,'detail'])->name('detail');
-    Route::get('/mypage/profile',[UserController::class,'profile'])->middleware(['auth'])->name('profile');
-    Route::post('/mypage/profile',[UserController::class,'storeProfile'])->middleware(['auth'])->name('storeProfile');
-
+    Route::get('/item/{id}',[ProductController::class,'detail'])->name('detail'); 
     Route::post('/detail/like/{id}',[ProductController::class,'like'])->middleware(['auth','verified'])->name('like');
 
     Route::post('/item/comment',[ProductController::class,'postComment'])->middleware(['auth','verified'])->name('comment');

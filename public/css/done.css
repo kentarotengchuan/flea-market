@@ -8,7 +8,7 @@
     font-size: 24px;
     font-weight: bold;
 }
-.buttons{
+.buttons__verify{
     display: flex;
     justify-content: center;
     gap:36px;

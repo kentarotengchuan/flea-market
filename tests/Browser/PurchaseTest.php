@@ -57,7 +57,7 @@ class PurchaseTest extends DuskTestCase
                 ->type('#cardCvc','666')
                 ->type('#billingName','testuser')
                 ->click('.SubmitButton')
-                ->pause(3000)
+                ->pause(5000)
                 ->assertPathIs("/item/$product->id");
 
             $this->assertDatabaseHas('products', [
@@ -74,7 +74,6 @@ class PurchaseTest extends DuskTestCase
             'name' => 'test_publisher',
             'email' => 'publisher@test.com',
             'password' => 'hogehoge',
-            'first_login' => 'no',
         ]);
         //テスト用の出品者を作成
 
@@ -107,7 +106,7 @@ class PurchaseTest extends DuskTestCase
                 ->type('#cardCvc','666')
                 ->type('#billingName','testuser')
                 ->click('.SubmitButton')
-                ->pause(3000)
+                ->pause(5000)
                 ->assertPathIs("/item/$product->id");
 
             $this->assertDatabaseHas('products', [
@@ -128,7 +127,6 @@ class PurchaseTest extends DuskTestCase
             'name' => 'test_publisher',
             'email' => 'publisher@test.com',
             'password' => 'hogehoge',
-            'first_login' => 'no',
         ]);
         //テスト用の出品者を作成
 
@@ -161,7 +159,7 @@ class PurchaseTest extends DuskTestCase
                 ->type('#cardCvc','666')
                 ->type('#billingName','testuser')
                 ->click('.SubmitButton')
-                ->pause(3000)
+                ->pause(5000)
                 ->assertPathIs("/item/$product->id");
 
             $this->assertDatabaseHas('products', [

@@ -6,7 +6,18 @@
 <main class="main">
     <div class="content">
         <div class="form__login">
-            <h2 class="form__ttl">ログイン</h2>        
+            <h2 class="form__ttl">ログイン</h2> 
+            @if(session('not_authorized'))
+            <div class="box__verify">
+                <p class="verify-message">{{session('not_authorized')}}</p>
+                <div class="buttons__verify">
+                    <form method="POST" action="{{ route('verification.send') }}">
+                    @csrf
+                    <button class="button__verify" type="submit">認証メールを再送</button>
+                </form>
+                </div>
+            </div>
+            @endif       
             <form action="{{route('login')}}" method="post">
             @csrf
                 <p class="ttl__name">ユーザー名/メールアドレス</p>

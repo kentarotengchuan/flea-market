@@ -91,8 +91,8 @@ class RegisterTest extends DuskTestCase
                 ->type('password', 'hogehoge')
                 ->type('password_confirmation', 'hogehoge')
                 ->press('登録する')
-                ->waitForLocation('/login')
-                ->assertPathIs('/login');
+                ->waitForLocation('/mypage/profile')
+                ->assertPathIs('/mypage/profile');
             
             $this->assertDatabaseHas('users', [
                 'email' => 'test01@test.com',
