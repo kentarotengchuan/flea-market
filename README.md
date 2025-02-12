@@ -25,14 +25,21 @@
 
 8.「./vendor/bin/sail artisan db:seed」を実行し、テストユーザーを作成する。
 
-    テストユーザー
+    管理者ユーザー
         ユーザー名：test
 
         メールアドレス：test@test.com
 
         パスワード：hogehoge
 
-    ※ダミー商品全ての出品者
+    テストユーザー
+        ユーザー名：test-user
+
+        メールアドレス：test-user@test.com
+
+        パスワード：hogehoge
+
+    ※管理者ユーザーはダミー商品全ての出品者
 
 9.「./vendor/bin/sail artisan storage:link」でシンボリックリンクを作成する。
 

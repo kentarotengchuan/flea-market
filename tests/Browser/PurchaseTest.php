@@ -85,7 +85,7 @@ class PurchaseTest extends DuskTestCase
                 ->assertPathIs('/');
 
             $product = Product::create([
-                'user_id' => 2,
+                'user_id' => 3,
                 'condition_id' => 1,
                 'name' => 'test_product',
                 'imgPath' => 'watch.jpg',
@@ -138,7 +138,7 @@ class PurchaseTest extends DuskTestCase
                 ->assertPathIs('/');
 
             $product = Product::create([
-                'user_id' => 2,
+                'user_id' => 3,
                 'condition_id' => 1,
                 'name' => 'test_product',
                 'imgPath' => 'watch.jpg',

@@ -25,5 +25,15 @@ class UserSeeder extends Seeder
             'building' => 'テストビル111',
             'imgPath' => 'emp.png',
         ]);
+        \DB::table('users')->insert([
+            'name' => 'test-user',
+            'email' => 'test-user@test.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('hogehoge'),
+            'postnumber' => '111-1111',
+            'address' => 'テスト県テスト市2丁目2-2',
+            'building' => 'テストビル222',
+            'imgPath' => 'emp.png',
+        ]);
     }
 }
