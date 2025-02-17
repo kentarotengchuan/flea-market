@@ -46,7 +46,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: 'password'
             MYSQL_ROOT_HOST: '%'
-            MYSQL_DATABASE: 'laravel'
+            MYSQL_DATABASE: 'larave'
             MYSQL_USER: 'sail'
             MYSQL_PASSWORD: 'password'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
